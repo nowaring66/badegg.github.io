@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格的修改</title>
+
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td,th{
+            border:1px ,solid ,red;
+            text-align: center;
+            padding:8px;
+            
+        }
+        button{
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; ">这是一个表格样式</h1>
+    <button onclick="addrow()">新增数据</button>
+
+    <table id="table">
+        <tr >
+         <th>姓名</th>
+        <th>联系方式</th>
+        <th>操纵</th>
+        </tr>
+        <tr>
+          <td>xiaoming</td>  
+          <td>123456789</td>
+          <td>
+          <button onclick="editrow(this)">编辑</button> <button onclick="delect(this)">删除</button>
+          </td>
+        </tr>
+    </table>
+    <script >
+        alert("import successfully")
+function addrow(){
+    var table=document.getElementById("table");
+    // console.log("成功");
+    var length=table.rows.length;
+    // console.log(length)
+    
+    var newrow=table.insertRow(length);
+    console.log(newrow);
+    var nameccell=newrow.insertCell(0);
+    var phoneccell=newrow.insertCell(1);
+    var actionccell=newrow.insertCell(2);
+    nameccell.innerHTML="未命名";
+    phoneccell.innerHTML="无";
+    actionccell.innerHTML=" <button onclick='editrow(this)'>编辑</button> <button onclick='delect(this)'>删除</button>";
+
+}
+function delect(button){
+    var thisrow=button.parentNode.parentNode;
+    thisrow.parentNode.removeChild(thisrow)
+}
+function editrow(button){
+    console.log("not ok");
+    var row=button.parentNode.parentNode;
+    var name=row.cells[0];
+    var phone=row.cells[1];
+    var inputname=prompt("请输入名字");
+    var inputphone=prompt("请输入电话");
+    name.innerHTML=inputname;
+    phone.innerHTML=inputphone;
+}
+    </script>
+</body>
+</html>
