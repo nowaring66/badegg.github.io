@@ -1,0 +1,29 @@
+.h1{
+     background-color: #11ec98;
+    background-image: url(/imag/image/cc1.png);
+    background-position: left;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  
+}
+.qukuai{
+    background-color: rgb(14, 119, 211);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+.foot{
+    background-color: black;
+    height: 20px;
+    font-size: 10px;
+    color: aliceblue;
+    text-align: center;
+}
+.menu{
+    display: block;
+    position: fixed;
+    border:none;
+    cursor: pointer;
+}
